@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "minds.technited.invisia.assignment"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "minds.technited.invisia.assignment"
