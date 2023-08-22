@@ -9,7 +9,7 @@
     android:layout_marginEnd="10dp"
     android:layout_marginBottom="10dp"
     android:background="#FFFFFF"
-    tools:context=".NewRoomSheetFragment">
+    tools:context=".ui.NewRoomSheetFragment">
 
     <ImageView
         android:id="@+id/imageView"

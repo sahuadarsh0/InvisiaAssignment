@@ -1,4 +1,4 @@
-package minds.technited.invisia.assignment
+package minds.technited.invisia.assignment.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package minds.technited.invisia.assignment
+package minds.technited.invisia.assignment.ui
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
