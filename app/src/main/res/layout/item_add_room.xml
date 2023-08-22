@@ -109,6 +109,7 @@
         app:layout_constraintTop_toBottomOf="@+id/childLabel" />
 
     <LinearLayout
+        android:id="@+id/childAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/ic_grey_border"
@@ -120,7 +121,6 @@
         app:layout_constraintTop_toTopOf="@+id/childLabel">
 
         <ImageView
-            android:id="@+id/childAdd"
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:src="@drawable/ic_add"
