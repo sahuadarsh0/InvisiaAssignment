@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="10dp"
-    android:layout_marginTop="60dp"
-    android:layout_marginEnd="10dp"
-    android:layout_marginBottom="10dp"
+    android:paddingStart="10dp"
+    android:paddingTop="60dp"
+    android:paddingEnd="10dp"
+    android:paddingBottom="10dp"
     android:background="#FFFFFF"
     tools:context=".ui.NewRoomSheetFragment">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/closeSheet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_close"
@@ -64,7 +64,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recycleRooms" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/apply"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

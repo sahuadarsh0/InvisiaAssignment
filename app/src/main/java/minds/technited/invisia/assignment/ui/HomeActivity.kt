@@ -31,7 +31,7 @@ class HomeActivity : AppCompatActivity() {
             roomDetailStr =  roomDetailStr.plus("Room ${room.roomNumber}")
                 .plus(" Adults ${room.adults}")
                 .plus(" Children ${room.children}")
-                .plus(" ")
+                .plus(" \n")
         }
         binding.roomDetails.text = roomDetailStr
     }

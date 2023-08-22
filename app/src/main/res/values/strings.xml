@@ -8,4 +8,5 @@
     <string name="room">Room</string>
     <string name="childDesc">Age: 0-17 only</string>
     <string name="childAge">Child 1 - 09 years</string>
+    <string name="empty_desc">Click on add room below to add rooms for adults and children</string>
 </resources>

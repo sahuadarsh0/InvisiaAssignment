@@ -19,8 +19,8 @@ class NewRoomSheetFragment : BottomSheetDialogFragment() {
     private lateinit var listRooms: ArrayList<RoomDetails>
     private var roomCounter = 1
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         val activity = requireActivity()
         meetingRoom = ViewModelProvider(activity)[MeetingRoomViewModel::class.java]
 
@@ -33,13 +33,23 @@ class NewRoomSheetFragment : BottomSheetDialogFragment() {
         binding = FragmentNewRoomSheetBinding.inflate(inflater, container, false)
         binding.apply {
 
-            recycleRooms.adapter = roomsAdapter
+            //Performing First Operation
+            listRooms = arrayListOf(
+                RoomDetails(
+                    roomNumber = roomCounter,
+                    adults = 1,
+                    children = 0
+                )
+            )
+            updateUI()
+
 
             apply.setOnClickListener {
                 saveAction()
             }
             newRoom.setOnClickListener {
                 if (listRooms.size < 9) {
+                    roomCounter++
                     listRooms.add(
                         RoomDetails(
                             roomNumber = roomCounter,
@@ -47,22 +57,35 @@ class NewRoomSheetFragment : BottomSheetDialogFragment() {
                             children = 0
                         )
                     )
-                    roomsAdapter.submitList(listRooms)
-                    roomCounter++
+                    Toast.makeText(context, "Room $roomCounter Added", Toast.LENGTH_SHORT).show()
+                    updateUI()
                 } else {
                     Toast.makeText(context, "MAX 9 Rooms Can be Created", Toast.LENGTH_SHORT).show()
                 }
+            }
+            closeSheet.setOnClickListener {
+                dismiss()
             }
         }
         return binding.root
     }
 
     private fun saveAction() {
-        meetingRoom.roomDetails.value
+        meetingRoom.roomDetails.value = listRooms
+        dismiss()
     }
 
     private fun onItemClicked(roomDetails: RoomDetails) {
-        listRooms.add(roomDetails)
+        if (listRooms.size > 1) {
+            listRooms.remove(roomDetails)
+            updateUI()
+        } else Toast.makeText(context, "MIN 1 Room Needed", Toast.LENGTH_SHORT).show()
+
+    }
+
+    private fun updateUI() {
+        roomsAdapter.submitList(listRooms)
+        binding.recycleRooms.adapter = roomsAdapter
     }
 
 }

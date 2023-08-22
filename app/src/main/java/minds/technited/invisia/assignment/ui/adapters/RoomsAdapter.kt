@@ -40,11 +40,11 @@ class RoomsAdapter(private val onItemClicked: (RoomDetails) -> Unit) :
         fun bind(roomDetails: RoomDetails, onItemClicked: (RoomDetails) -> Unit) {
             binding.apply {
                 var adultsCounterData = adultsCounter.text.toString().toInt()
+                 roomNo.text = "Room ${roomDetails.roomNumber}"
 
                 fun updateAdultCounter() {
                     adultsCounter.text = adultsCounterData.toString()
                     roomDetails.adults = adultsCounterData
-                    onItemClicked(roomDetails)
                 }
 
                 adultsAdd.setOnClickListener {
@@ -56,9 +56,18 @@ class RoomsAdapter(private val onItemClicked: (RoomDetails) -> Unit) :
                     }
                 }
                 adultsRemove.setOnClickListener {
+                    if (adultsCounterData > 1) {
                     adultsCounterData--
-                    updateAdultCounter()
+                    updateAdultCounter() } else {
+                        Toast.makeText(binding.root.context, "MIN Adults Reached", Toast.LENGTH_SHORT).show()
+                    }
                 }
+                deleteRoom.setOnClickListener {
+                    onItemClicked(roomDetails)
+                    Toast.makeText(binding.root.context, "Room ${roomDetails.roomNumber} removed", Toast.LENGTH_SHORT).show()
+
+                }
+
             }
         }
 

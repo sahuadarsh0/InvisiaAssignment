@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/deleteRoom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_delete"
@@ -58,7 +58,7 @@
         android:orientation="horizontal"
         android:padding="6dp"
         app:layout_constraintBottom_toBottomOf="@+id/adultsDescLabel"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/deleteRoom"
         app:layout_constraintTop_toTopOf="@+id/adultsLabel">
 
         <ImageView
@@ -116,7 +116,7 @@
         android:orientation="horizontal"
         android:padding="4dp"
         app:layout_constraintBottom_toBottomOf="@+id/childDescLabel"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/deleteRoom"
         app:layout_constraintTop_toTopOf="@+id/childLabel">
 
         <ImageView
